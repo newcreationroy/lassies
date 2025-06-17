@@ -1,0 +1,171 @@
+@import "../../css/_mixins.scss";
+@import "../../css/_theme-vars.scss";
+@import "css/_skin-vars.scss";
+
+/* Extra Styles +++++++++
+ ++++++++++++++++++++++ */
+body.body_style_fullscreen:not(.sc_stack_section_present):not(.elementor-editor-active) .content_wrap_fullscreen,
+body.body_style_fullscreen:not(.sc_stack_section_present):not(.elementor-editor-active) .content_wrap_fullscreen {
+	overflow: hidden;	/* Used to prevent horizontal scroll on fullscreen pages.
+						Please be advised that this rule is incompatible with sticky effects for sections - any fixed row will instead be displayed on the bottom of the page. */
+}
+/* Testimonials */
+.sc_testimonials_alter {
+	[class*="column"] .sc_testimonials_item_author:before,
+	.sc_testimonials_item_author:before {
+		color: var(--theme-color-text_link3);
+	}
+} 
+
+/* Icons */
+.sc_icons_plain {
+	.sc_icons_item {
+		.sc_icons_icon {
+			color: var(--theme-color-text_link);
+		}
+		&:hover .sc_icons_icon {
+			color: var(--theme-color-text_hover);
+		}
+	}
+}
+.sc_icons_card {
+	.sc_icons_item {
+		border: none;
+		@include box-shadow(none);
+		&:hover {
+			@include box-shadow(0 5px 20px rgba(0,0,0,0.03));
+		}
+	}
+	&.color_style_dark .sc_icons_item {
+		.sc_icons_item_more_link {
+			color: var(--theme-color-alter_dark);
+		}
+		&:hover .sc_icons_item_more_link {
+			color: var(--theme-color-alter_link);
+		}
+	}
+}
+.sc_icons_plate {
+	.sc_icons_item {
+		.sc_icons_item:nth-child(3n-1),
+		.slider-slide:nth-child(3n-1) .sc_icons_item,
+		[class*="trx_addons_column-"]:nth-child(3n-1) .sc_icons_item {
+			background-color: var(--theme-color-text_link3_03);
+		}
+		.sc_icons_item:nth-child(3n),
+		.slider-slide:nth-child(3n) .sc_icons_item,
+		[class*="trx_addons_column-"]:nth-child(3n) .sc_icons_item {
+			background-color: var(--theme-color-text_link2_03);
+		}
+	}
+}
+/* Services Fix */
+.ua_gecko {
+	.sc_services_unusual {
+		.sc_services_item  {
+			.sc_services_item_more_link .link_icon {
+				line-height: 2.15em;
+			}
+		}
+	}
+}
+/* Booked */
+table.booked-calendar thead tr {
+	background-color: var(--theme-color-text_link) !important;
+}
+table.booked-calendar thead tr th:first-child {
+	border-color: var(--theme-color-text_link) !important;
+}
+body .booked-form .booked-appointments p.appointment-info i:before {
+	color: var(--theme-color-text_link);
+}
+body .booked-calendar-wrap .booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+body .booked-modal .bm-window .button.button-primary,
+body .booked-modal .bm-window .button.booked-forgot-goback, 
+body .booked-modal .bm-window .button.cancel {
+	background: var(--theme-color-text_link) !important;
+	border-color: var(--theme-color-text_link) !important;
+	&:hover {
+		background: var(--theme-color-text_hover) !important;
+		border-color: var(--theme-color-text_hover) !important;
+	}
+}
+body .booked-form #ajaxlogin .booked-forgot-password {
+	color: var(--theme-color-text_link);
+	&:hover {
+		color: var(--theme-color-text_hover);
+	}
+}
+/* Search */
+.search_modern {
+	.search_header_wrap .logo_image {
+		top: 49px;
+	}
+	> .search_submit {
+		top: auto;
+	}
+} 
+/* Responsive */
+@media (max-width: 1279px) {
+	/* Search */
+	.search_modern {
+		.search_header_wrap .logo_image  {
+			top: 22px;
+			max-height: 55px;
+		}
+	}
+	/* Mobile Menu */
+	.menu_mobile {
+		.menu_mobile_nav_area li > a > .open_child_menu:before,
+		.menu_mobile_nav_area li.opened > a > .open_child_menu:before,
+		.menu_mobile_nav_area li > a:hover > .open_child_menu:before {
+			right: 0;
+			opacity: 1;
+		}
+		.menu_mobile_nav_area {
+			top: 27%;
+		}
+		.sc_layouts_logo {
+			img {
+				max-height: 55px;
+			}
+		}
+	} 
+}
+@media (max-width: 1023px) {
+	/* Mobile Menu */
+	.menu_mobile {
+		.menu_mobile_nav_area {
+			top: 33%;
+		}
+	} 
+ 	/* Search */
+	 .search_modern {
+		.search_header_wrap .logo_image  {
+			top: 13px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	/* Mobile Menu */
+	.menu_mobile {
+		.menu_mobile_nav_area {
+			top:auto;
+		}
+		.sc_layouts_logo {
+			img {
+				max-height: 40px;
+			}
+		}
+	} 
+	/* Search */
+	.search_modern {
+		.search_header_wrap .logo_image  {
+			top: 13px;
+			max-height: 40px;
+		}
+	}
+	.ua_safari .search_modern > .search_submit {
+		top: auto;
+	}
+}
